@@ -68,3 +68,21 @@ function playRound(playerSelection, computerSelection) {
   }
   //return "Still developing";
 }
+
+/*
+PROGRAM game(){
+  Call this function to play five rounds of function playRound()
+  For each round, it should prompt for user input.
+  Each round should output a result.
+  A score is accumulated for each round.
+  At the end of 5 rounds, it should output the final winner.
+}
+*/
+
+function game() {
+  let playerSelection = prompt();
+  console.log(playerSelection);
+  let computerSelection = getComputerChoice();
+  console.log(computerSelection);
+  return playRound(playerSelection, computerSelection);
+}
