@@ -39,6 +39,8 @@ PROGRAM playRound(playerSelection, computerSelection) {
     THEN "You lose! `computerSelection` beats `playerSelection".
   } ELSEIF (playerSection === 'rock' && computerSelection === 'scissors`){
     THEN "You win! `playerSelection` beats `computerSelection".
+  } ELSE {
+    THEN "Wrong Input! Please input Rock, Paper or Scissors only."
   }
   The output must be a RETURN instead of a console.log
 }
@@ -65,6 +67,8 @@ function playRound(playerSelection, computerSelection) {
     return `You lose! ${computerSelection} beats ${playerInput}`;
   } else if (playerInput === "Rock" && computerSelection === "Scissors") {
     return `You win! ${playerInput} beats ${computerSelection}`;
+  } else {
+    return "Wrong Input! Please input Rock, Paper or Scissors only.";
   }
   //return "Still developing";
 }
@@ -74,15 +78,104 @@ PROGRAM game(){
   Call this function to play five rounds of function playRound()
   For each round, it should prompt for user input.
   Each round should output a result.
+  playerScore = 0
+  computerScore = 0
+  IF (result contains You win) {
+    playerScore =+ 0;
+  } ELSE IF (result contains You lose) {
+    computerScore =+ 0;
+  }
   A score is accumulated for each round.
   At the end of 5 rounds, it should output the final winner.
+  IF (playerScore > computerScore) {
+    THEN print You win!
+    } ELSEIF (playerScore === computerScore) {
+      THEN print No one wins!
+    } ELSE {
+      THEN print You lose!
+    }
+  }
 }
 */
 
 function game() {
   let playerSelection = prompt();
-  console.log(playerSelection);
   let computerSelection = getComputerChoice();
-  console.log(computerSelection);
-  return playRound(playerSelection, computerSelection);
+  let playerScore = 0;
+  let computerScore = 0;
+  let result = playRound(playerSelection, computerSelection);
+  if (result.includes("You win")) {
+    playerScore += 1;
+  } else if (result.includes("You lose")) {
+    computerScore += 1;
+  } else if (result.includes("You draw")) {
+    console.log("No score given");
+  } else {
+    console.log("Please input Rock, Paper or Scissors only");
+  }
+  console.log(playerScore, computerScore);
+
+  playerAnswer = prompt();
+  computerSelection = getComputerChoice();
+  result = playRound(playerAnswer, computerSelection);
+  if (result.includes("You win")) {
+    playerScore += 1;
+  } else if (result.includes("You lose")) {
+    computerScore += 1;
+  } else if (result.includes("You draw")) {
+    console.log("No score given");
+  } else {
+    console.log("Please input Rock, Paper or Scissors only");
+  }
+  console.log(playerScore, computerScore);
+
+  playerAnswer = prompt();
+  computerSelection = getComputerChoice();
+  result = playRound(playerAnswer, computerSelection);
+  if (result.includes("You win")) {
+    playerScore += 1;
+  } else if (result.includes("You lose")) {
+    computerScore += 1;
+  } else if (result.includes("You draw")) {
+    console.log("No score given");
+  } else {
+    console.log("Please input Rock, Paper or Scissors only");
+  }
+  console.log(playerScore, computerScore);
+
+  playerAnswer = prompt();
+  computerSelection = getComputerChoice();
+  result = playRound(playerAnswer, computerSelection);
+  if (result.includes("You win")) {
+    playerScore += 1;
+  } else if (result.includes("You lose")) {
+    computerScore += 1;
+  } else if (result.includes("You draw")) {
+    console.log("No score given");
+  } else {
+    console.log("Please input Rock, Paper or Scissors only");
+  }
+  console.log(playerScore, computerScore);
+
+  playerAnswer = prompt();
+  computerSelection = getComputerChoice();
+  result = playRound(playerAnswer, computerSelection);
+  if (result.includes("You win")) {
+    playerScore += 1;
+  } else if (result.includes("You lose")) {
+    computerScore += 1;
+  } else if (result.includes("You draw")) {
+    console.log("No score given");
+  } else {
+    console.log("Please input Rock, Paper or Scissors only");
+  }
+  console.log(playerScore, computerScore);
+
+  if (playerScore > computerScore) {
+    console.log("You win! =p");
+  } else if (playerScore === computerScore) {
+    console.log("You draw! Try again.");
+  } else {
+    console.log("You lose! Don't lose hope.");
+  }
 }
