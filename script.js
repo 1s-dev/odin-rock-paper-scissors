@@ -46,13 +46,15 @@ PROGRAM playRound(playerSelection, computerSelection) {
 }
 */
 
-function playRound(playerSelection, computerSelection) {
-  let lowerCaseInput = playerSelection.toLowerCase();
+function normalizeWord(input) {
+  let lowerCaseInput = input.toLowerCase();
   let firstLetter = lowerCaseInput.substr(0, 1);
   let remainingLetter = lowerCaseInput.substr(1);
   let playerInput = firstLetter.toUpperCase() + remainingLetter;
-  //console.log(playerInput);
-  //console.log(playerInput, computerSelection);
+  return playerInput;
+}
+
+function gameRule(playerInput, computerSelection) {
   if (playerInput === computerSelection) {
     return `You draw! Both are ${playerInput}`;
   } else if (playerInput === "Rock" && computerSelection === "Paper") {
@@ -71,6 +73,13 @@ function playRound(playerSelection, computerSelection) {
     return "Wrong Input! Please input Rock, Paper or Scissors only.";
   }
   //return "Still developing";
+}
+
+function playRound(playerSelection, computerSelection) {
+  let input = playerSelection;
+  let normalizeInput = normalizeWord(input);
+  console.log(normalizeInput);
+  return gameRule(normalizeInput, computerSelection);
 }
 
 /*
