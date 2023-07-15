@@ -105,7 +105,7 @@ PROGRAM game(){
 }
 */
 
-function game() {
+function playGame() {
   let playerSelection = prompt();
   let computerSelection = getComputerChoice();
   let playerScore = 0;
