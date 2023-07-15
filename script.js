@@ -75,9 +75,9 @@ function checkRoundResult(playerInput, computerInput) {
 
 function playRound(playerSelection, computerSelection) {
   let input = playerSelection;
-  let normalizeInput = upFirstLetter(input);
-  console.log(normalizeInput);
-  return checkRoundResult(normalizeInput, computerSelection);
+  let normalizedInput = upFirstLetter(input);
+  console.log(normalizedInput);
+  return checkRoundResult(normalizedInput, computerSelection);
 }
 
 /*
