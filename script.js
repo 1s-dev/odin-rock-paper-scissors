@@ -54,25 +54,24 @@ function normalizeWord(input) {
   return playerInput;
 }
 
-function gameRule(playerInput, computerSelection) {
-  if (playerInput === computerSelection) {
+function gameRule(playerInput, computerInput) {
+  if (playerInput === computerInput) {
     return `You draw! Both are ${playerInput}`;
-  } else if (playerInput === "Rock" && computerSelection === "Paper") {
-    return `You lose! ${computerSelection} beats ${playerInput}`;
-  } else if (playerInput === "Paper" && computerSelection === "Rock") {
-    return `You win! ${playerInput} beats ${computerSelection}`;
-  } else if (playerInput === "Paper" && computerSelection === "Scissors") {
-    return `You lose! ${computerSelection} beats ${playerInput}`;
-  } else if (playerInput === "Scissors" && computerSelection === "Paper") {
-    return `You win! ${playerInput} beats ${computerSelection}`;
-  } else if (playerInput === "Scissors" && computerSelection === "Rock") {
-    return `You lose! ${computerSelection} beats ${playerInput}`;
-  } else if (playerInput === "Rock" && computerSelection === "Scissors") {
-    return `You win! ${playerInput} beats ${computerSelection}`;
+  } else if (playerInput === "Rock" && computerInput === "Paper") {
+    return `You lose! ${computerInput} beats ${playerInput}`;
+  } else if (playerInput === "Paper" && computerInput === "Rock") {
+    return `You win! ${playerInput} beats ${computerInput}`;
+  } else if (playerInput === "Paper" && computerInput === "Scissors") {
+    return `You lose! ${computerInput} beats ${playerInput}`;
+  } else if (playerInput === "Scissors" && computerInput === "Paper") {
+    return `You win! ${playerInput} beats ${computerInput}`;
+  } else if (playerInput === "Scissors" && computerInput === "Rock") {
+    return `You lose! ${computerInput} beats ${playerInput}`;
+  } else if (playerInput === "Rock" && computerInput === "Scissors") {
+    return `You win! ${playerInput} beats ${computerInput}`;
   } else {
     return "Wrong Input! Please input Rock, Paper or Scissors only.";
   }
-  //return "Still developing";
 }
 
 function playRound(playerSelection, computerSelection) {
