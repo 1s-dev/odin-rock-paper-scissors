@@ -53,7 +53,7 @@ function upFirstLetter(input) {
   return normalizedWord;
 }
 
-function gameRule(playerInput, computerInput) {
+function checkRoundResult(playerInput, computerInput) {
   if (playerInput === computerInput) {
     return `You draw! Both are ${playerInput}`;
   } else if (playerInput === "Rock" && computerInput === "Paper") {
@@ -77,7 +77,7 @@ function playRound(playerSelection, computerSelection) {
   let input = playerSelection;
   let normalizeInput = upFirstLetter(input);
   console.log(normalizeInput);
-  return gameRule(normalizeInput, computerSelection);
+  return checkRoundResult(normalizeInput, computerSelection);
 }
 
 /*
