@@ -46,11 +46,11 @@ PROGRAM playRound(playerSelection, computerSelection) {
 }
 */
 
-function normalizeWord(input) {
-  let lowerCaseInput = input.toLowerCase();
-  let firstLetterUp = lowerCaseInput.substr(0, 1).toUpperCase();
-  let firstUpInput = firstLetterUp + lowerCaseInput.substr(1);
-  return firstUpInput;
+function upFirstLetter(input) {
+  let loweredCaseInput = input.toLowerCase();
+  let firstLetterUp = loweredCaseInput.substr(0, 1).toUpperCase();
+  let normalizedWord = firstLetterUp + loweredCaseInput.substr(1);
+  return normalizedWord;
 }
 
 function gameRule(playerInput, computerInput) {
@@ -75,7 +75,7 @@ function gameRule(playerInput, computerInput) {
 
 function playRound(playerSelection, computerSelection) {
   let input = playerSelection;
-  let normalizeInput = normalizeWord(input);
+  let normalizeInput = upFirstLetter(input);
   console.log(normalizeInput);
   return gameRule(normalizeInput, computerSelection);
 }
