@@ -48,10 +48,9 @@ PROGRAM playRound(playerSelection, computerSelection) {
 
 function normalizeWord(input) {
   let lowerCaseInput = input.toLowerCase();
-  let firstLetter = lowerCaseInput.substr(0, 1);
-  let remainingLetter = lowerCaseInput.substr(1);
-  let playerInput = firstLetter.toUpperCase() + remainingLetter;
-  return playerInput;
+  let firstLetterUp = lowerCaseInput.substr(0, 1).toUpperCase();
+  let firstUpInput = firstLetterUp + lowerCaseInput.substr(1);
+  return firstUpInput;
 }
 
 function gameRule(playerInput, computerInput) {
